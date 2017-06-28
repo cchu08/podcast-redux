@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node server/index.js"
+    "start": "webpack-dev-server --progress --colors --hot --config ./webpack.config.js"
   },
   "author": "Chris",
   "license": "ISC",
