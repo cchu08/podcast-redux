@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 function Stream({ episodes = [] }) {
   return (
@@ -9,8 +10,16 @@ function Stream({ episodes = [] }) {
     </div>
   );
 }
+
+function mapStateToProps(state) {
+  const episodes = state.episodes;
+  return {
+    episodes,
+  };
+}
+
 Stream.propTypes = {
   episodes: React.PropTypes.arrayOf.isRequired,
 };
 
-export default Stream;
+export default connect(mapStateToProps)(Stream);
